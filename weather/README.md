@@ -36,14 +36,14 @@ Select the country of the weather associated to the city.
 
 Type:  *C/F*<br>
 Default: `C`
-
+# ![alt tag](F.PNG)
 Select the scale required.
 ##### HELP
 
 Type: --help <br>
 
 Pour plus d'informations.
-
+# ![alt tag](help.PNG)
 
 
 
