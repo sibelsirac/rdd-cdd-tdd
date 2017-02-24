@@ -10,7 +10,7 @@ $ npm install chalk
 $ npm install update-notifier
 ```
 ## Usage
-*Launch the cli.js to obtain the Weather of Dhaka
+*Launch the cli.js to obtain the Weather (of Dhaka by default)
 
 ## API
 
@@ -31,7 +31,7 @@ Type:  *your country*<br>
 Default: `Bangladesh`
 
 Select the country of the weather associated to the city.
-
+# ![pageres](paris.png)
 ##### scale
 
 Type:  *C/F*<br>
