@@ -38,7 +38,7 @@ Write the Unit tests with [assert](https://nodejs.org/api/assert.html) as assert
 
 ### CDD
 
-Write missing method comments with JSDoc for all files in [lib](./lib) directory.
+Write missing method comments with JSDoc for all files in [weather](./weather) directory (`cli.js` and `index.js` files).
 
 ## Just tell me what to do
 

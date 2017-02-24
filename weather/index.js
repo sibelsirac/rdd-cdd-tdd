@@ -1,27 +1,24 @@
-#! /usr/bin/env node
+'use strict';
 
-var publicIp = require('public-ip'),
-    chalk = require('chalk'),
-    config = require('./lib/config'),
-    events = require('events');
+const YQL = require('yql');
+const _ = require('lodash');
 
-var units = {
-        type: 'us',
-        tmp: '˚F',
-        speed: 'mph'
-    };
+module.exports = (opts, callback) => {
+	opts = opts || [];
 
-var ip = '';
+	let query;
 
-publicIp(function (err, res) {
-    if (err) {
-        console.log(chalk.red('✗ couldn\'t find public ip address'));
-    } else if (res) {
-        ip = res;
-    }
-});
+	if (_.isEmpty(opts)) {
+		query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="Dhaka, Bangladesh")');
+	} else {
+		query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + opts[0] + ', ' + opts[1] + '")');
+	}
 
-var Config = new config(units, ip);
-Config.sudo();
+	query.exec((err, response) => {
+		if (err) {
+			return callback(err);
+		}
 
-console.log(chalk.dim('powered by Forecast.io'));
+		callback(null, response);
+	});
+};
