@@ -31,7 +31,7 @@ Type:  *your country*<br>
 Default: `Bangladesh`
 
 Select the country of the weather associated to the city.
-# (parisg.png)
+# (paris.png)
 ##### scale
 
 Type:  *C/F*<br>
